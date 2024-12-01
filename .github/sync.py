@@ -7,10 +7,6 @@ from github import Github
 
 def get_github_latest_release():
     g = Github()
-    owner = os.environ['GH_OWNER']
-    repo_name = os.environ['GH_REPO']
-    print(owner)
-    print(repo_name)
     repo = g.get_repo("StevenNight/nezha")
     release = repo.get_latest_release()
     if release:

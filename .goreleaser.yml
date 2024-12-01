@@ -72,4 +72,4 @@ snapshot:
 archives:
   - id: zip
     format: zip
-    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+    name_template: "dashboard-{{ .Os }}-{{ .Arch }}"

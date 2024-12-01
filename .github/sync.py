@@ -132,4 +132,5 @@ def get_abs_path(path: str):
     return os.path.join(wd, path)
 
 
+print("sync release begin")
 get_github_latest_release()

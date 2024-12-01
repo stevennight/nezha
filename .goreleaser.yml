@@ -69,3 +69,7 @@ builds:
     binary: dashboard-{{ .Os }}-{{ .Arch }}
 snapshot:
   version_template: "dashboard"
+archives:
+  - id: zip
+    format: zip
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"

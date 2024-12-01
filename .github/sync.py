@@ -7,7 +7,7 @@ from github import Github
 
 def get_github_latest_release():
     g = Github()
-    repo = g.get_repo("StevenNight/nezha")
+    repo = g.get_repo("stevennight/nezha")
     release = repo.get_latest_release()
     if release:
         print(f"Latest release tag is: {release.tag_name}")

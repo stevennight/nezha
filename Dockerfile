@@ -12,6 +12,7 @@ RUN chmod +x /entrypoint.sh
 
 WORKDIR /dashboard
 COPY dist/dashboard-${TARGETOS}-${TARGETARCH} ./app
+RUN chmod +x /dashboard/app
 
 VOLUME ["/dashboard/data"]
 EXPOSE 80 5555

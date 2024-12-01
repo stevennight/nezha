@@ -127,5 +127,6 @@ goreleaser build
 ```bash
 # docker hub
 docker build -t stevennight/nezha:v0 .
+docker run -d -p 8080:80 --name test stevennight/nezha:v0
 docker push stevennight/nezha:v0
 ```

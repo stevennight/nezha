@@ -106,27 +106,30 @@ You can change the dashboard language in the settings page (`/setting`) after th
 [![Star History Chart](https://api.star-history.com/svg?repos=naiba/nezha&type=Timeline)](https://star-history.com/#naiba/nezha&Timeline)
 
 
-# Go 编译
+# 编译
+通过github actions进行构建。
 
-## 安装Go Releaser
-https://goreleaser.com/install/
+## 准备Ali仓库
+[控制台](https://cr.console.aliyun.com/cn-shanghai/instance/dashboard)
 
-## 安装编译环境（ubuntu, debian系）
-```bash
-sudo apt-get install gcc-s390x-linux-gnu
-sudo apt-get install gcc-aarch64-linux-gnu
-sudo apt-get install mingw-w64
+默认使用的是上海区域的仓库，若需要使用其他区域，请编辑文件：`.github/workflows/release.yml`
+
+## 配置Action Secret
+```text
+IPINFO_TOKEN
+ALI_USER
+ALI_PAT
 ```
 
-## 编译
+## 触发构建
+
 ```bash
-goreleaser release
+# 替换版本号
+git tag vx.x.x
+git push --tags
 ```
 
-# Docker 
-```bash
-# docker hub
-docker build -t stevennight/nezha:v0 .
-docker run -d -p 8080:80 --name test stevennight/nezha:v0
-docker push stevennight/nezha:v0
-```
+## 完成构建
+构建完成后，仓库的release会有最新的版本。 另外也会提交到github和阿里云的仓库。
+
+对应的仓库地址为<github用户名>/nezha-dashboard。如果需要其他名字，请在`.github/workflows/release.yml`文件中调整。

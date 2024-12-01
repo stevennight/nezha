@@ -11,6 +11,7 @@ jobs:
       GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
       GITEE_OWNER: ${{ secrets.GITEE_OWNER }}
       GITEE_REPO: ${{ secrets.GITEE_REPO }}
+      GITEE_BRANCH: ${{ secrets.GITEE_BRANCH }}
       GH_OWNER: ${{ github.repository_owner }}
       GH_REPO: ${{ github.repository }}
     steps:
@@ -18,4 +19,4 @@ jobs:
       - name: Sync to Gitee
         run: |
           pip3 install PyGitHub
-          python3 .github/sync.py
+          python3 -u .github/sync.py

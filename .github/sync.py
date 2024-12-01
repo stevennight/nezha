@@ -7,7 +7,9 @@ from github import Github
 
 def get_github_latest_release():
     g = Github()
-    repo = g.get_repo("stevennight/nezha")
+    gh_owner = GH_OWNER
+    gh_repo = GITEE_REPO
+    repo = g.get_repo(gh_repo)
     release = repo.get_latest_release()
     if release:
         print(f"Latest release tag is: {release.tag_name}")
@@ -69,6 +71,7 @@ def sync_to_gitee(tag: str, body: str, files: slice):
     release_id = ""
     owner = os.environ['GITEE_OWNER']
     repo = os.environ['GITEE_REPO']
+    branch = os.environ['GITEE_BRANCH']
     release_api_uri = f"https://gitee.com/api/v5/repos/{owner}/{repo}/releases"
     api_client = requests.Session()
     api_client.headers.update({
@@ -83,7 +86,7 @@ def sync_to_gitee(tag: str, body: str, files: slice):
         'name': tag,
         'body': body,
         'prerelease': False,
-        'target_commitish': 'master'
+        'target_commitish': branch
     }
     release_api_response = api_client.post(release_api_uri, json=release_data)
     if release_api_response.status_code == 201:

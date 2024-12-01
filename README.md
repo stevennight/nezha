@@ -116,6 +116,7 @@ You can change the dashboard language in the settings page (`/setting`) after th
 
 ## 配置Action Secret
 ```text
+# https://ipinfo.io 中获取。
 IPINFO_TOKEN
 ALI_USER
 ALI_PAT

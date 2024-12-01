@@ -120,7 +120,7 @@ sudo apt-get install mingw-w64
 
 ## 编译
 ```bash
-goreleaser build
+goreleaser release
 ```
 
 # Docker 

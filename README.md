@@ -143,6 +143,7 @@ GITEE_REPO
 GITHUB_OWNER
 GITHUB_REPO
 ```
+推送此分支触发同步。
 
 # 本地编译
 

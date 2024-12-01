@@ -111,7 +111,17 @@ You can change the dashboard language in the settings page (`/setting`) after th
 ## 安装Go Releaser
 https://goreleaser.com/install/
 
+## 安装编译环境（ubuntu, debian系）
+```bash
+sudo apt-get install gcc-s390x-linux-gnu
+sudo apt-get install gcc-aarch64-linux-gnu
+sudo apt-get install mingw-w64
+```
 
+## 编译
+```bash
+goreleaser build
+```
 
 # Docker 
 ```bash

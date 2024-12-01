@@ -10,6 +10,7 @@ def get_github_latest_release():
     owner = os.environ['GITHUB_OWNER']
     repo = os.environ['GITHUB_REPO']
     repo = g.get_repo(f"{owner}/{repo}")
+    print(f"Github Repository: {owner}/{repo}")
     release = repo.get_latest_release()
     if release:
         print(f"Latest release tag is: {release.tag_name}")

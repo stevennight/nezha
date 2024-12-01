@@ -104,3 +104,18 @@ You can change the dashboard language in the settings page (`/setting`) after th
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=naiba/nezha&type=Timeline)](https://star-history.com/#naiba/nezha&Timeline)
+
+
+# Go 编译
+
+## 安装Go Releaser
+https://goreleaser.com/install/
+
+
+
+# Docker 
+```bash
+# docker hub
+docker build -t stevennight/nezha:v0 .
+docker push stevennight/nezha:v0
+```

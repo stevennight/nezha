@@ -134,6 +134,16 @@ git push --tags
 
 对应的仓库地址为<github用户名>/nezha-dashboard。如果需要其他名字，请在`.github/workflows/release.yml`文件中调整。
 
+## 同步仓库、Release
+配置以下Action Secret
+```text
+GITEE_TOKEN
+GITEE_OWNER
+GITEE_REPO
+GITHUB_OWNER
+GITHUB_REPO
+```
+
 # 本地编译
 
 ## 安装Go Releaser

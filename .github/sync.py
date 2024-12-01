@@ -7,8 +7,8 @@ from github import Github
 
 def get_github_latest_release():
     g = Github()
-    owner = os.environ['GITHUB_OWNER']
-    repo = os.environ['GITHUB_REPO']
+    owner = os.environ['GH_OWNER']
+    repo = os.environ['GH_REPO']
     repo = g.get_repo(f"{owner}/{repo}")
     print(f"Github Repository: {owner}/{repo}")
     release = repo.get_latest_release()

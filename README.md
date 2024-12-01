@@ -106,7 +106,7 @@ You can change the dashboard language in the settings page (`/setting`) after th
 [![Star History Chart](https://api.star-history.com/svg?repos=naiba/nezha&type=Timeline)](https://star-history.com/#naiba/nezha&Timeline)
 
 
-# 编译
+# Actions编译
 通过github actions进行构建。
 
 ## 准备Ali仓库
@@ -133,3 +133,31 @@ git push --tags
 构建完成后，仓库的release会有最新的版本。 另外也会提交到github和阿里云的仓库。
 
 对应的仓库地址为<github用户名>/nezha-dashboard。如果需要其他名字，请在`.github/workflows/release.yml`文件中调整。
+
+# 本地编译
+
+## 安装Go Releaser
+https://goreleaser.com/install/
+
+## 安装编译环境（ubuntu, debian系）
+```bash
+sudo apt-get install gcc-s390x-linux-gnu
+sudo apt-get install gcc-aarch64-linux-gnu
+sudo apt-get install mingw-w64
+```
+
+## 编译
+```bash
+goreleaser release
+```
+
+# Docker
+```bash
+# docker hub
+docker build -t stevennight/nezha:v0 .
+docker run -d -p 8080:80 --name test stevennight/nezha:v0
+docker push stevennight/nezha:v0
+```
+
+## 已知问题
+- 由于没有actions中的Fetch IPInfo GeoIP Database这一步，导致编译出来的文件无法正确显示地区信息。

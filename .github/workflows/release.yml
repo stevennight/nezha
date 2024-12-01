@@ -141,7 +141,7 @@ jobs:
       - name: Log in to the AliyunCS
         uses: docker/login-action@master
         with:
-          registry: registry.cn-shanghai.aliyuncs.com
+          registry: registry.cn-guangzhou.aliyuncs.com
           username: ${{ secrets.ALI_USER }}
           password: ${{ secrets.ALI_PAT }}
 

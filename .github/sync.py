@@ -9,7 +9,6 @@ def get_github_latest_release():
     g = Github()
     owner = os.environ['GH_OWNER']
     repo = os.environ['GH_REPO']
-    print(f"Github Repository: {owner}/{repo}")
     repo = g.get_repo("stevennight/nezha")
     release = repo.get_latest_release()
     if release:
